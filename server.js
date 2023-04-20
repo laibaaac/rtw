@@ -1,11 +1,14 @@
-// const port = process.env.PORT || 4242
 const express = require('express');
 //express ophalen 
 const app = express();
-const port = 6000;
+const http = require('http').createServer(app);
+const path = require('path');
+const io = require('socket.io')(http);
+const port = process.env.PORT || 4242
 
-app.use(express.static('public', options));
-app.use('/public', express.static(__dirname + '/public/'));
-
+app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
+
+
+
 
