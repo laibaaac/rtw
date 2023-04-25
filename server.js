@@ -9,9 +9,8 @@ const port = process.env.PORT || 4242
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
-const router = express.Router();
 
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index');
 });
 
