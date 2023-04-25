@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Time Web</title>
   <link rel="stylesheet" href="/public/styles/styles.css">
+  
 </head>
 <body>
     <header>
@@ -13,9 +14,31 @@
     </header>
     
   <main>
-
-  </main>
+    <body>
+        <h1>Web Girlies</h1>
+        <main>
+          <section>
+            <p id="time"></p>
+          </section>
+          <section>
+            <form>
+              <input type="text" id="username-input" placeholder="Enter your username">
+            </form>
+          </section>
+      
+          <section>
+      
+            <ul></ul>
+            <form class="message-input">
+              <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
+              <button type="submit" id="message-button"><span>Send</span></button>
+            </form>
+          </section>
+        </main>
+      
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/scripts/script.js"></script>
   
-  <script src="/public/script/script.js"></script>
+
 </body>
 </html>
