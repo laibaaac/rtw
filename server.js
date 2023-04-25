@@ -1,5 +1,5 @@
 const express = require('express');
-//express ophalen 
+
 const app = express();
 const http = require('http').createServer(app);
 const path = require('path');
@@ -19,10 +19,7 @@ io.on("connection", (socket) => {
     console.log('user connected');
 
     socket.on('message', (message) => {
-        // while (history.length > historySize) {
-        //   history.shift()
-        // }
-        // history.push(message)
+        
 
         io.emit('message', message)
     })
