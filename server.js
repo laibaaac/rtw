@@ -67,7 +67,6 @@ io.on("connection", (socket) => {
             // Verstuur het bericht naar alle clients
         }
 
-        
     });
     
         socket.on('disconnect', () => {
