@@ -44,6 +44,7 @@ socket.on('connect', () => {
 });
 
 socket.on('message', message => {
+    console.log('message', message)
     const li_element = document.createElement('li');
     li_element.textContent = ` ${message.username} : ${message.message} `;
     // li_element.classList.add('talk-bubble',' tri-right' ,'border' ,'round btm-left-in');
@@ -62,9 +63,24 @@ socket.on('error', (message) => {
 });
 
 
-
+socket.on('history', (history) => {
+    console.log('history',history);
+   for (let i = 0; i < history.length; i++) {
+    const li_element = document.createElement('li');
+    li_element.textContent = ` ${history[i].username} : ${history[i].message} `;
+    // li_element.classList.add('talk-bubble',' tri-right' ,'border' ,'round btm-left-in');
+    li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
+    messages.appendChild(li_element);
+    messages.scrollTop = messages.scrollHeight;
+   }
+  });
   
 function insertDate() {
    let currentDate = 'Today ' + date.toUTCString().slice(5, 16);
     time.textContent = currentDate;
 }
+
+function addMessage(message) {
+    messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
+    messages.scrollTop = messages.scrollHeight
+  }
