@@ -1,9 +1,22 @@
-const express = require('express');
+import express from "express";
+import http from 'http';
+
+import path from "path";
+// import axios from "axios";
+import alex from 'alex';
+import { allow, noBinary, profanitySureness } from "./.alexrc.js";
+
 const app = express();
-const http = require('http').createServer(app);
-const path = require('path');
-const io = require('socket.io')(http);
-const port = process.env.PORT || 4545
+const server = http.createServer(app);
+
+import { Server } from "socket.io";
+import { fileURLToPath } from "url";
+const io = new Server(server);
+
+const port = process.env.PORT || 4545;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
@@ -14,8 +27,9 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+
 io.on("connection", (socket) => {
-    console.log('user connected');
+    console.log('user is connected');
 
     socket.on('message', (message) => {
         
@@ -25,11 +39,31 @@ io.on("connection", (socket) => {
 
 
     socket.on('disconnect', () => {
-        console.log('user disconnected')
-    })
+        console.log('user is disconnected')
+    });
+
+    socket.on('message', (message) => {
+
+        const result = alex(message.message, {
+            allow: allow,
+            noBinary: noBinary,
+            profanitySureness: profanitySureness
+        }).messages;
+
+        if (result.length > 0) {
+            console.log('failed!');
+            socket.emit('error', 'Please watch your language.');
+        } else {
+            console.log('success!');
+            socket.emit('success', { message: 'Thank you for your message.' });
+        }
+    
+    });
+    
 });
 
-http.listen(port, () => {
+  
+server.listen(port, () => {
     console.log(`Example app listening on  http://localhost:${port}`)
 });
 

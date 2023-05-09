@@ -153,6 +153,7 @@ main section:nth-child(3) ul {
     background-color: var(--low-opacity-pink);
     border: 2px solid var(--dark-blue);
 }
+
 /******************/
 /* RESPONSIVENESS */
 /******************/
@@ -162,3 +163,29 @@ main section:nth-child(3) ul {
         width: 75%;
     }
 }
+
+#error {
+    display: none;
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  #error.show {
+    display: block;
+  }
+  
+  .socket-disconnected {
+    border: none;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .socket-disconnected::before {
+    content: "You are offline.";
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  

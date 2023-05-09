@@ -1,8 +1,8 @@
-exports.allow = [
+export const allow = [
     "hostesses-hosts" // name of the rule you want to allow
 ];
 
-exports.noBinary = false;
+export const noBinary = false;
 
 
-exports.profanitySureness = 1;
+export const profanitySureness = 1;
