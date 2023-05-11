@@ -8,6 +8,7 @@ const time = document.querySelector('#time');
 const chatScreen = document.querySelector('main section:nth-of-type(3)');
 const createUserbutton = document.querySelector('.create-user-btn');
 const goBackButton = document.querySelector('.back-btn');
+const typingIndicator = document.querySelector('.feedback');
 chatScreen.classList.add('hidden');
 console.log('user button', createUserbutton, usernameForm)
 let date = new Date();
@@ -62,6 +63,8 @@ submit.addEventListener('click', event => {
 
         socket.emit('message', chat)
         input.value = ''
+
+        
     }
 })
 
@@ -76,7 +79,8 @@ socket.on('message', message => {
 
     li_element.textContent = ` ${message.username} : ${message.message} `;
     li_element.id = message.message_id;
-    // li_element.classList.add('talk-bubble',' tri-right' ,'border' ,'round btm-left-in');
+    li_element.dataset.mymessage="berichtje"
+
     li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
     messages.appendChild(li_element);
     messages.scrollTop = messages.scrollHeight;
@@ -89,6 +93,8 @@ socket.on('error', (message) => {
     setTimeout(() => {
         error.classList.remove('show');
     }, 5000);
+
+
 });
 
 
@@ -126,6 +132,19 @@ socket.on('history', (history) => {
         }
     }
   });
+
+  socket.on('typing', (typingUser) => {
+
+    typingIndicator.innerHTML = `${typingUser} is typing...`;
+
+    console.log(`${typingUser} is typing...`);
+
+    console.log('User is typing')
+
+
+    // In your own perspectief staat de chat message in de rechterkant van de chat
+
+})
   
 function insertDate() {
    let currentDate = 'Today ' + date.toUTCString().slice(5, 16);

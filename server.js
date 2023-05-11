@@ -67,6 +67,18 @@ io.on("connection", (socket) => {
             // Verstuur het bericht naar alle clients
         }
 
+        socket.on('typing', (typingUser) => {
+            
+            socket.broadcast.emit('typing', typingUser);
+            console.log(`${typingUser} is typing`);
+        })
+    
+        socket.on('stop typing', (typingUser) => {
+          
+            socket.broadcast.emit('stop typing', typingUser);
+            console.log(`${typingUser} stopped typing`);
+        })
+
     });
     
         socket.on('disconnect', () => {

@@ -31,6 +31,7 @@ body {
     font-family: var(--text);
     font-weight: 400;
     position: relative;
+    overflow: hidden;
 }
 
 h1 {
@@ -48,12 +49,12 @@ a {
 
 li {
     list-style: none;
+    
 }
 
 main {
     
     margin: .5em;
-
 }
 /********/
 /* FORM */
@@ -77,12 +78,20 @@ main section:nth-child(2){
 }
 main section:nth-child(2).hidden{
     display:none;
-
 }
 main section:nth-child(3) ul {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    height: 70vh;
+    scroll-behavior: smooth;
 }
+
+main section:nth-child(3) ul li[data-mymessage="berichtje"]{
+    align-self: flex-end;
+    
+}
+
 
 /*****************/
 /* SPEECH BUBBLE */
@@ -95,12 +104,12 @@ main section:nth-child(3) ul {
     height: auto;
     background-color: var(--light-pink);
     padding: 1em;
-    box-shadow: 2px 4px rgba(0 0 0/ 0.3)
+    box-shadow: 2px 4px rgba(0 0 0/ 0.3);
+    
 }
 
 .border {
     border-radius: 1em;
-
 }
 
 .tri-right.border.btm-left-in:before {
@@ -112,6 +121,7 @@ main section:nth-child(3) ul {
     right: auto;
     top: auto;
     bottom: -40px;
+    
 
 }
 
@@ -144,6 +154,7 @@ main section:nth-child(3) ul {
     padding: 2em;
     display: flex;
     gap: 2em;
+   
 }
 
 /* input type text */
@@ -157,6 +168,7 @@ main section:nth-child(3) ul {
     font-weight: 400;
     font-size: 1.2em;
     padding: 1em;
+   
 }
 
 /*  submit button */
