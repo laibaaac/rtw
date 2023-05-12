@@ -2,6 +2,26 @@
 
 ## Angrezi
 
+## Inhoudsopgave
+- [Job story](#job-story)
+- [Proof of concept](#proof-of-concept)
+  * [1e concept](#1e-concept)
+  * [2e concept](#2e-concept)
+  * [3e concept](#3e-concept)
+- [Used Tools](#used-tools)
+- [App installation](#app-installation)
+  * [NPM](#npm)
+  * [Express](#express)
+  * [Socket.io](#socketio)
+  * [EJS](#ejs)
+- [App Deploy](#app-deploy)
+- [Alex.js](#alexjs)
+- [Core functionaliteiten](#core-functionaliteiten)
+- [MoSCoW](#moscow)
+- [Data model](#data-model)
+- [Data lifecycle model](#data-lifecycle-model)
+- [Real time events](#real-time-events)
+- [Bronnen](#bronnen)
 
 ## Job story 
 
