@@ -47,7 +47,15 @@
 
 
 ## App Deploy 
-Ik gebruik de live platform Railway en ook Adaptable, beide zijn heel fijn om te gebruiken. Je kan je github repo erbij linken
+Ik gebruik de live platform Railway en ook Adaptable, beide zijn heel fijn om te gebruiken. Je kan je github repo erbij linken en worden de meest recente updates meteen gedployed
+
+**Railway** (is stabieler)
+[Railway live link](https://rtw-production.up.railway.app/)
+
+**Adaptable** (Als de bovenste link niet werkt)
+[Adaptable live link](https://chat-rtw.adaptable.app)
+
+
 
 ## Alex.js
 
