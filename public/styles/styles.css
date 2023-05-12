@@ -76,6 +76,10 @@ main section:nth-child(3) form {
 main section:nth-child(2){
     display: block;
 }
+
+form:first-of-type #username-input{
+    background-color: pink;
+}
 main section:nth-child(2).hidden{
     display:none;
 }
@@ -91,6 +95,7 @@ main section:nth-child(3) ul li[data-mymessage="berichtje"]{
     align-self: flex-end;
     
 }
+
 
 
 /*****************/
@@ -190,6 +195,9 @@ main section:nth-child(3) ul li[data-mymessage="berichtje"]{
     }
 }
 
+/******************/
+/* Offline mode */
+/******************/
 #error {
     display: none;
     color: red;
@@ -212,6 +220,26 @@ main section:nth-child(3) ul li[data-mymessage="berichtje"]{
     content: "You are offline.";
     display: block;
     margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  /******************/
+/* English only bericht */
+/******************/
+
+  .popup {
+    position: fixed;
+    bottom: 200px;
+    right: 300px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  
+  .popup p {
+    margin: 5px;
+    font-size: 14px;
     font-weight: bold;
   }
   

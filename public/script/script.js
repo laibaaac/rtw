@@ -1,4 +1,8 @@
+// Maak een socket verbinding
 const socket = io()
+
+// ------------------- HTML Elementen -------------------
+// haalt html elementen vanuit index.ejs 
 const messages = document.querySelector('section ul')
 const input = document.querySelector('#message-input')
 const submit = document.querySelector('#message-button');
@@ -8,31 +12,38 @@ const time = document.querySelector('#time');
 const chatScreen = document.querySelector('main section:nth-of-type(3)');
 const createUserbutton = document.querySelector('.create-user-btn');
 const goBackButton = document.querySelector('.back-btn');
-const typingIndicator = document.querySelector('.feedback');
-chatScreen.classList.add('hidden');
-console.log('user button', createUserbutton, usernameForm)
-let date = new Date();
 
+// Verberg het chatscherm totdat de gebruiker een naam heeft ingevoerd
+chatScreen.classList.add('hidden');
+
+// ------------------- Datum  -------------------
+// Maak een nieuwe datum en voeg deze toe aan het chatscherm
+let date = new Date();
 insertDate();
 
-
+// ------------------- Username en Chatscreen zichtbaar -------------------
+// Verbergt het chatscherm totdat de gebruiker een naam heeft ingevoerd
 createUserbutton.addEventListener('click', e =>{
     e.preventDefault()
     chatScreen.classList.remove('hidden');
     usernameForm.classList.add('hidden');
 });
 
+// Verbergt het chatscherm totdat de gebruiker een naam heeft ingevoerd
 goBackButton.addEventListener('click', e =>{
     e.preventDefault()
     usernameForm.classList.remove('hidden');
     chatScreen.classList.add('hidden');
 });
 
+// ------------------- Connectie checken -------------------
+// Controleert of er een verbinding is om de 5 seconden
 function checkSocketConnection() {
     if (socket.connected) {
         console.log('Socket is connected');
         chatScreen.classList.remove('socket-disconnected');
     } else {
+        // als mijn server niet meer connectie heeft, krijg ik de offline #error functie te zien
         console.log('Socket is disconnected');
         chatScreen.classList.add('socket-disconnected');
         setTimeout(() => {
@@ -43,16 +54,21 @@ function checkSocketConnection() {
             }
         }, 5000);
     }
-}
+};
 
+// De'connect' event wordt hier gebruikt om te controleren of de socket verbinding actief is
+socket.on('connect', () => {
+    checkSocketConnection();
+    setInterval(checkSocketConnection, 1000);
+});
+
+
+// ------------------- Username en Message -------------------
+// hier kan ik zo mijn berichten versturen en er komt ook een username erbij
 submit.addEventListener('click', event => {
     event.preventDefault();
 
     const allListElements = messages.querySelectorAll('li');
-
-    // TODO: get length of all li elements -> for example 5 li in ul, length will be 4
-    // your message id should be 5
-    // message_id = (allListElements.length + 1)
     
     if (input.value) {
 
@@ -61,19 +77,15 @@ submit.addEventListener('click', event => {
             message: input.value,
             message_id: `message_${allListElements.length+1}`
         }
-
+        // Emit een 'message' event om het bericht te verzenden naar de server
         socket.emit('message', chat)
         input.value = ''
-
         
     }
-})
-
-socket.on('connect', () => {
-    checkSocketConnection();
-    setInterval(checkSocketConnection, 1000);
 });
 
+// ------------------- Messages sturen naar andere -------------------
+// De 'message' event wordt hier geroepen om een bericht te ontvangen van de server en voeg deze toe aan het chatscherm
 socket.on('message', message => {
     console.log('message', message)
     const li_element = document.createElement('li');
@@ -85,30 +97,11 @@ socket.on('message', message => {
     li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
     messages.appendChild(li_element);
     messages.scrollTop = messages.scrollHeight;
-})
-
-
-input.addEventListener('input', () => {
-    const username = input.value;
-    console.log(username);
-    socket.emit('typing', {focus:true , username:username})
-})
-
-
-socket.on('typing', (data) => {
-
-    typingIndicator.classList.add("nono")
-
-if (data.focus) {
-    typingIndicator.innerHTML = `${data.username} is typing...`;
-    typingIndicator.classList.add("fofo")
-    console.log(`${data.username} is typing...`);
-
-    console.log('User is typing')  
-}
 });
 
 
+// ------------------- Localstorage & Chathistory-------------------
+// De'history' event wordt hier gebruikt om een lijst van berichten te ontvangen van de server en voeg deze toe
 socket.on('history', (history) => {
     console.log('history',history);
 
@@ -130,11 +123,9 @@ socket.on('history', (history) => {
 
             if (allMessageIds.includes(toCheckId)) {
                 console.log('dont show this item!');
-            } else {
-
+            }  else {
                 const li_element = document.createElement('li');
                 li_element.textContent = ` ${history[i].username} : ${history[i].message} `;
-                // li_element.classList.add('talk-bubble',' tri-right' ,'border' ,'round btm-left-in');
                 li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
                 messages.appendChild(li_element);
                 messages.scrollTop = messages.scrollHeight;    
@@ -145,13 +136,16 @@ socket.on('history', (history) => {
   });
 
 
-  
+// ------------------- Datum-------------------
+// hier geef ik een functie mee, waar ik de huidige datum  mee geef 
 function insertDate() {
    let currentDate = 'Today ' + date.toUTCString().slice(5, 16);
     time.textContent = currentDate;
-}
+};
 
+// ------------------- New messages in de chat-------------------
+// Voeg een nieuwe boodschap toe aan de lijst van berichten
 function addMessage(message) {
     messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
     messages.scrollTop = messages.scrollHeight
-  }
+  };
