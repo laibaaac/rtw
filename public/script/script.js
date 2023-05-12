@@ -15,6 +15,7 @@ let date = new Date();
 
 insertDate();
 
+
 createUserbutton.addEventListener('click', e =>{
     e.preventDefault()
     chatScreen.classList.remove('hidden');
@@ -70,7 +71,7 @@ submit.addEventListener('click', event => {
 
 socket.on('connect', () => {
     checkSocketConnection();
-    setInterval(checkSocketConnection, 500);
+    setInterval(checkSocketConnection, 1000);
 });
 
 socket.on('message', message => {
@@ -86,15 +87,25 @@ socket.on('message', message => {
     messages.scrollTop = messages.scrollHeight;
 })
 
-socket.on('error', (message) => {
-    const error = document.querySelector('#error');
-    error.textContent = message;
-    error.classList.add('show');
-    setTimeout(() => {
-        error.classList.remove('show');
-    }, 5000);
+
+input.addEventListener('input', () => {
+    const username = input.value;
+    console.log(username);
+    socket.emit('typing', {focus:true , username:username})
+})
 
 
+socket.on('typing', (data) => {
+
+    typingIndicator.classList.add("nono")
+
+if (data.focus) {
+    typingIndicator.innerHTML = `${data.username} is typing...`;
+    typingIndicator.classList.add("fofo")
+    console.log(`${data.username} is typing...`);
+
+    console.log('User is typing')  
+}
 });
 
 
@@ -133,18 +144,7 @@ socket.on('history', (history) => {
     }
   });
 
-  socket.on('typing', (typingUser) => {
 
-    typingIndicator.innerHTML = `${typingUser} is typing...`;
-
-    console.log(`${typingUser} is typing...`);
-
-    console.log('User is typing')
-
-
-    // In your own perspectief staat de chat message in de rechterkant van de chat
-
-})
   
 function insertDate() {
    let currentDate = 'Today ' + date.toUTCString().slice(5, 16);
