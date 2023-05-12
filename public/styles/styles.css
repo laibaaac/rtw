@@ -77,9 +77,66 @@ main section:nth-child(2){
     display: block;
 }
 
+form:first-of-type{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
 form:first-of-type #username-input{
-    background-color: pink;
+    padding: 2em;
+    margin: 3em;
+    width: 40em;
+    height: 10em;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
+
+.create-user-btn{
+    width: 10em; 
+    height: 5em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--low-opacity-pink);
+    border: 2px solid none;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.create-user-btn:hover{
+    background-color: #DDA0DD;
+    width: 11em;
+    height: 6em;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+   
+}
+
+
+.back-btn{
+    width: 5em; 
+    height: 3em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--low-opacity-pink);
+    border: 2px solid none;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover{
+    background-color: #DDA0DD;
+    width: 5.5em;
+    height: 3.5em;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+
+}
+
 main section:nth-child(2).hidden{
     display:none;
 }
@@ -178,7 +235,8 @@ main section:nth-child(3) ul li[data-mymessage="berichtje"]{
 
 /*  submit button */
 #message-button {
-  width: 5em; 
+  width: 8em; 
+  height: 2em;
   border: none;
     border-radius: .5em;
     background-color: var(--low-opacity-pink);
@@ -229,7 +287,7 @@ main section:nth-child(3) ul li[data-mymessage="berichtje"]{
 
   .popup {
     position: fixed;
-    bottom: 200px;
+    bottom: 100px;
     right: 300px;
     background-color: #fff;
     padding: 10px;
