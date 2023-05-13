@@ -1,8 +1,8 @@
 # Real Time Web
 
-## Angrezi
+## Angrezi?
 <img width="1000" alt="Schermafbeelding 2023-05-13 om 06 37 59" src="https://github.com/laibaaac/rtw/assets/94360732/91fb5e9b-e790-4d18-b691-889c92429aa1">
-Angrezi (english translated in urdu) is een chat applicatie die ik heb gemaakt voor het vak Real Time Web. 
+Angrezi? (english translated in urdu) is een chat applicatie die ik heb gemaakt voor het vak Real Time Web. 
 Door middel van socket.io verstuur ik en ontvang ik real time data (data die je meteen ziet).
 Zie hier de proces achter het bouwen van de applicatie!
 
@@ -45,10 +45,16 @@ Als een gebruiker, wil ik met meerdere mensen van verschillende landen kunnen ch
 ## Proof of concept
 
 ### 1e concept 
+De trivia app
 
 ### 2e concept
+Gifs app (met giphy api)
 
 ### 3e concept 
+Angrezi? 
+In verschillende talen kunnen chatten
+
+
 
 ## Used Tools 
 
@@ -77,8 +83,6 @@ nvm Install
 
 ### Express
 
-
-
 ```
 npm install express 
 ```
@@ -102,6 +106,45 @@ Alex.js is mijn api / npm tool die ik gebruik om te filteren in mijn chat.
 
 ```
 npm install alex --global
+```
+
+config file 
+
+```
+export const allow = [
+    "hostesses-hosts" // name of the rule you want to allow
+];
+
+export const noBinary = false;
+
+
+export const profanitySureness = 1;
+``` 
+
+
+Server side
+
+```
+// Handel 'message'-events af, zo kan de gberuiker berichten sturen 
+    socket.on('message', (message) => {
+
+        // Controleer de berichten met Alex.js, basically hier worden de berichte gefilterd, zie mijn .alexrc.js (config file)
+        const result = alex(message.message, {
+            allow: allow,
+            noBinary: noBinary,
+            profanitySureness: profanitySureness
+        }).messages;
+        // Als het bericht niet aan de criteria voldoet, kan de gebruiker het bericht niet door sturen
+        if (result.length > 0) {
+            console.log('failed!');
+            socket.emit('error', 'Please watch your language.');
+            // Als het bericht wel aan de criteria voldoet, kan de gebruiker het bericht doorsturen naar andere 
+        } else {
+            console.log('success!: ' + message.message);
+            socket.emit('success', { message: 'Thank you for your message.' });
+      }
+        });
+
 ```
 
 
@@ -128,6 +171,7 @@ npm install alex --global
 
 ### Could have 
 - Als een gebruiker meer dan een paar keer uitscheld dan wordt de gebruiker eruit gekickt
+- language detector (er zijn geen stabiele language detectors, waardoor ik heb gekozen om dit niet te implementeren)
 
 ### Would have 
 - Zien welke gebruiker zit te typen 
