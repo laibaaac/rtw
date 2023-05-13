@@ -52,7 +52,6 @@ Zie hier de proces achter het bouwen van de applicatie!
 - [Real time events](#real-time-events)
 - [Bronnen](#bronnen)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 ## Job story
