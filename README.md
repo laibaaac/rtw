@@ -47,6 +47,7 @@ Zie hier de proces achter het bouwen van de applicatie!
   * [Chat](#chat)
   * [Bericht sturen](#bericht-sturen)
   * [Scheldwoord](#scheldwoord)
+  * [Offline](#offline)
 - [Data model](#data-model)
 - [Data lifecycle model](#data-lifecycle-model)
 - [Real time events](#real-time-events)
