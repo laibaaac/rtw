@@ -248,7 +248,9 @@ Het begin scherm is meteen waar de gebruiker een user name kan aanmaken.
 
 ### Chat 
 Na het invullen van de user name kom je terecht bij de chatroom. 
+Hier zie je de datum, een go back button om je username aan te passen, een inputfield om een bericht te typen en een send button om het bericht te sturen.
 
+<img width="500" alt="Schermafbeelding 2023-05-09 om 12 27 04" src="https://github.com/laibaaac/rtw/assets/94360732/04892915-7c74-47ad-adc6-827c1afdea4c">
 
 
 
@@ -256,8 +258,11 @@ Na het invullen van de user name kom je terecht bij de chatroom.
 In de chatroom kan je naar de gebruikers een bericht sturen en krijg je ook berichtjes te zien van andere. 
 Verder kan je ook de vorige berichten zien na het refreshen. 
 
+<img width="500" alt="Schermafbeelding 2023-05-13 om 06 37 59" src="https://github.com/laibaaac/rtw/assets/94360732/9bee80b8-ff8e-4189-a65e-fbad034a40bc">
 
-### scheldwoord 
+
+
+### Scheldwoord 
 Wanneer een gebruiker uitscheld, dan wordt het woord niet weergeven in de chat en krijgt de gebruiker een waarschuwing
 
 
