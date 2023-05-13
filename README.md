@@ -45,14 +45,36 @@ Als een gebruiker, wil ik met meerdere mensen van verschillende landen kunnen ch
 
 ### 1e concept 
 De trivia app
+De gebruiker wordt een vraag gesteld door de trivia api.  Er worden een aantal opties gegeven en de gebruiker moet een van de opties kiezen. 
+De trivia api bevat verschillende topics en of je kan algemene onderwerpen gebruiken of je kan specifieke onderwerpen laten terug komen uit de api. 
+De score van de gebruikers worden bijgehouden en de gebruiker die 5 keer een antwoord goed heeft wint de match. 
+
+**Schets**
 
 ### 2e concept
-Gifs app (met giphy api)
+Gifs app 
+In deze app kan je met gebruikers chatten en ook gifs sturen vanuit de giphy api. 
+De giphy api bestaat uit een zoekbalk en de content die erin wordt geladen en gefilterd. 
+Zo kan de gebruiker extra emoties in de app betrekken.
+
+**Schets**
+
+
 
 ### 3e concept 
 Angrezi? 
-In verschillende talen kunnen chatten
+Engels leren kan best moeilijk zijn. Om een taal te leren is de handigste manier om ermee te oefenen met personen, dus in geprek proberen te gaan. 
+Hierdoor heb ik de angrezi app bedacht, hier kan de gebruiker engels proberen te leren, zonder dat de gebruiker geintimideerd voelt. Het is een safe space, waardoor de gebruiker niet aarzelt om met andere te spreken. 
+Ik ga de api / npm tool Alex.js gebruiken die let op verschillende soorten scheldwoorden in het engels, gender insensitief woorden en ook kan je zelf woorden wel en niet toelaten. 
+Verder als het mij lukt om een betrouwbare language detector  te vinden, ga ik die proberen te implementeren, zo kan er gecheckt worden wie wel en niet engels praat. 
 
+**Schets**
+
+
+## Gekozen concept
+Uiteindelijk heb ik voor de 3e concept gekozen, het is een origineel idee en ook te doen met mijn skills die ik op dit moment beheers.
+Alleen moet ik het idee wat aanpassen, ik wou een language detector proberen in te zetten, maar die zijn niet 100% accuraat. Ze werken niet zo goed en zijn niet zo betrouwbaar. Ik heb er voor gekozen om alleen alex.js te gebruiken en in de app ga ik aangeven dat het een striclty only english speaking app is. Als ik nog meer de tijd, de skills en een beter language detector heb, dan zou ik de app zeker aanpassen. 
+Voor nu maak ik de app een safe space om engels met andere personen proberen te leren, met een safe space bedoel ik dat de gebruiker niet uitgescholden kan worden en alles schoon wordt gehouden in de chat.   
 
 
 ## Used Tools 
@@ -181,6 +203,12 @@ Ik spreek alex via de server aan, ik heb het het onder messages erin gezet, bij 
 
 ```
 
+### Error 
+Tijdens het implementen van alex.js kreeg ik steeds error, later kwam ik er achter dat alex.js geen requires toe laat in de server.js. 
+Hierdoor moest ik mijn server file helemaal omzetten naar de ESmodule (ipv require, imports gebruiken). 
+Verder moest ik de config file ook apart in de server zetten, de data werd niet meteen uit de config file gehaald.
+(Zie hierboven mijn server.js code)
+
 ## Core functionaliteiten
 - Berichten kunnen sturen naar andere gebruikers
 - Berichten kunnen ontvangen van andere gebruikers
@@ -206,8 +234,10 @@ Ik spreek alex via de server aan, ik heb het het onder messages erin gezet, bij 
 - Als een gebruiker meer dan een paar keer uitscheld dan wordt de gebruiker eruit gekickt
 - language detector (er zijn geen stabiele language detectors, waardoor ik heb gekozen om dit niet te implementeren)
 
+
 ### Would have 
 - Zien welke gebruiker zit te typen 
+- Verschillende chatrooms 
 
 ## App Explanation
 Ik ga heel kort hier vertellen hoe mijn app precies werkt. 
