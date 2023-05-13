@@ -297,6 +297,22 @@ Soms kan het zijn dat de server geen connectie krijgt, hiervoor heb ik een offli
 
 
 ## Data model
+Zoals ik al eerder zei, ik gebruik een npm tool die data krijgt en verstuurd. Hiervoor maak ik zelf een config file wat ik wel en niet toe laat in mijn applicatie. Op dit moment heb ik alleen de profanitySureness aan, dit let op scheldwoorden. 
+
+**config file**
+```
+export const allow = [
+    "hostesses-hosts" // name of the rule you want to allow
+];
+
+export const noBinary = false;
+
+
+export const profanitySureness = 1;
+``` 
+
+**Schets**
+
 
 ## Data lifecycle model
 
