@@ -191,17 +191,17 @@ Ik spreek alex via de server aan, ik heb het het onder messages erin gezet, bij 
 ## App Explanation
 Ik ga heel kort hier vertellen hoe mijn app precies werkt. 
 
-## User name
+### User name
 Het begin scherm is meteen waar de gebruiker een user name kan aanmaken. 
 <img width="500" alt="Schermafbeelding 2023-05-13 om 06 37 59" src="https://github.com/laibaaac/rtw/assets/94360732/91fb5e9b-e790-4d18-b691-889c92429aa1">
 
-## Chat 
+### Chat 
 
 
-## Bericht sturen 
+### Bericht sturen 
 
 
-## scheldwoord 
+### scheldwoord 
 
 
 
