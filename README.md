@@ -284,6 +284,8 @@ Verder kan je ook de vorige berichten zien na het refreshen.
 Wanneer een gebruiker uitscheld, dan wordt het woord niet weergeven in de chat en krijgt de gebruiker een waarschuwing
 
 
+### Offline
+Soms kan het zijn dat de server geen connectie krijgt, hiervoor heb ik een offline mode. De gebruiker krijgt duidelijk te zien dat hij of zij offline is. 
 
 
 
