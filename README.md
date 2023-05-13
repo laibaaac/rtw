@@ -287,6 +287,7 @@ Wanneer een gebruiker uitscheld, dan wordt het woord niet weergeven in de chat e
 
 ### Offline
 Soms kan het zijn dat de server geen connectie krijgt, hiervoor heb ik een offline mode. De gebruiker krijgt duidelijk te zien dat hij of zij offline is. 
+
 <img width="500" alt="Schermafbeelding 2023-05-13 om 09 08 44" src="https://github.com/laibaaac/rtw/assets/94360732/a351974e-5e22-49ef-bf80-b75d43bb43d4">
 
 
