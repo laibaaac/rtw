@@ -1,6 +1,8 @@
 # Real Time Web
 
 ## Angrezi
+<img width="1000" alt="Schermafbeelding 2023-05-13 om 06 37 59" src="https://github.com/laibaaac/rtw/assets/94360732/91fb5e9b-e790-4d18-b691-889c92429aa1">
+Angrezi (english translated in urdu) is een chat applicatie die ik heb gemaakt voor het vak Real Time Web. Door middel van socket.io
 
 ## Inhoudsopgave
 - [Job story](#job-story)
