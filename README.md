@@ -110,14 +110,17 @@ Ik gebruik de live platform Railway en ook Adaptable, beide zijn heel fijn om te
 
 
 ## Alex.js
-Alex.js is mijn api / npm tool die ik gebruik om te filteren in mijn chat.
+Alex.js is mijn api / npm tool die gebruik ik om de uitscheldwoorden te filteren in mijn chat.
 
+De api werkt als volgt:
+
+**Install** 
 ```
 npm install alex --global
 ```
 
-config file 
-
+**Config file**
+Hier maak ik een config file, in mijn client side aan, ik laat profanity words (uitscheld woorden) niet toe. Verder hbe je 2 andere variable de allow, hier kan ik zelf toevoeg wat ik wel toe laat en no Binary kijkt naar gender insensitive woorden. 
 ```
 export const allow = [
     "hostesses-hosts" // name of the rule you want to allow
@@ -130,7 +133,8 @@ export const profanitySureness = 1;
 ``` 
 
 
-Server side
+**Server side**
+Ik spreek alex via de server aan, ik heb het het onder messages erin gezet, bij elke bericht checkt alex als er een scheld woord aanwezig is. 
 
 ```
 // Handel 'message'-events af, zo kan de gberuiker berichten sturen 
@@ -183,6 +187,25 @@ Server side
 
 ### Would have 
 - Zien welke gebruiker zit te typen 
+
+## App Explanation
+Ik ga heel kort hier vertellen hoe mijn app precies werkt. 
+
+## User name
+Het begin scherm is meteen waar de gebruiker een user name kan aanmaken. 
+<img width="500" alt="Schermafbeelding 2023-05-13 om 06 37 59" src="https://github.com/laibaaac/rtw/assets/94360732/91fb5e9b-e790-4d18-b691-889c92429aa1">
+
+## Chat 
+
+
+## Bericht sturen 
+
+
+## scheldwoord 
+
+
+
+
 
 
 ## Data model
