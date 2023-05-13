@@ -124,6 +124,7 @@ npm install alex --global
 
 ### Should have 
 - Berichten beter kunnen volgen (de berichten worden vanuit rechts ingeladen)
+- Vorige berichten kunnen terug zien
 
 ### Could have 
 - Als een gebruiker meer dan een paar keer uitscheld dan wordt de gebruiker eruit gekickt
