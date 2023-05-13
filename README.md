@@ -114,12 +114,12 @@ Alex.js is mijn api / npm tool die gebruik ik om de uitscheldwoorden te filteren
 
 De api werkt als volgt:
 
-**Install** 
+### Install
 ```
 npm install alex --global
 ```
 
-**Config file**
+### Config file
 Hier maak ik een config file, in mijn client side aan, ik laat profanity words (uitscheld woorden) niet toe. Verder hbe je 2 andere variable de allow, hier kan ik zelf toevoeg wat ik wel toe laat en no Binary kijkt naar gender insensitive woorden. 
 ```
 export const allow = [
@@ -133,7 +133,7 @@ export const profanitySureness = 1;
 ``` 
 
 
-**Server side**
+### Server side
 Ik spreek alex via de server aan, ik heb het het onder messages erin gezet, bij elke bericht checkt alex als er een scheld woord aanwezig is. 
 
 ```
@@ -159,6 +159,27 @@ Ik spreek alex via de server aan, ik heb het het onder messages erin gezet, bij 
 
 ```
 
+### Structure
+
+```
+{
+  "include": ["test/**/*.js", "*.js"],
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020"],
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "strict": true
+  }
+}
+
+```
 
 ## Core functionaliteiten
 - Berichten kunnen sturen naar andere gebruikers
