@@ -312,6 +312,7 @@ export const profanitySureness = 1;
 ``` 
 
 **Schets**
+
 <img width="500" alt="Schermafbeelding 2023-05-13 om 09 26 33" src="https://github.com/laibaaac/rtw/assets/94360732/689bd441-1925-447c-9838-5718ae0b7415">
 
 
