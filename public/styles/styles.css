@@ -113,7 +113,6 @@ form:first-of-type #username-input{
     width: 11em;
     height: 6em;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
-   
 }
 
 
@@ -260,7 +259,7 @@ main section:nth-child(3) ul li[data-mymessage="berichtje"]{
     display: none;
     color: red;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
   }
   
   #error.show {

@@ -66,7 +66,6 @@ io.on("connection", (socket) => {
             noBinary: noBinary,
             profanitySureness: profanitySureness
         }).messages;
-        
         // Als het bericht niet aan de criteria voldoet, kan de gebruiker het bericht niet door sturen
         if (result.length > 0) {
             console.log('failed!');
@@ -75,7 +74,7 @@ io.on("connection", (socket) => {
         } else {
             console.log('success!: ' + message.message);
             socket.emit('success', { message: 'Thank you for your message.' });
-            io.emit('message', message)
+            socket.emit('message', message)
             // Kijkt naar de lengte van de history en verwijderd oude bericht als het groter is dan de limiet
             while (history.length > historySize) {
               history.shift()

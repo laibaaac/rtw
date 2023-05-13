@@ -36,6 +36,8 @@ goBackButton.addEventListener('click', e =>{
     chatScreen.classList.add('hidden');
 });
 
+  
+  
 // ------------------- Connectie checken -------------------
 // Controleert of er een verbinding is om de 5 seconden
 function checkSocketConnection() {
@@ -83,6 +85,8 @@ submit.addEventListener('click', event => {
         
     }
 });
+
+
 
 // ------------------- Messages sturen naar andere -------------------
 // De 'message' event wordt hier geroepen om een bericht te ontvangen van de server en voeg deze toe aan het chatscherm
