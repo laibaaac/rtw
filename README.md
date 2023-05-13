@@ -232,7 +232,7 @@ Verder kan je ook de vorige berichten zien na het refreshen.
 
 
 
-### scheldwoord 
+### Scheldwoord 
 Wanneer een gebruiker uitscheld, dan wordt het woord niet weergeven in de chat en krijgt de gebruiker een waarschuwing
 
 
