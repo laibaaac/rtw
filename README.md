@@ -329,13 +329,12 @@ Verder worden er verschillende real time events verstuurd en ontvangen tussen de
 Voor het communicatie tussen de server en de clients. Heb ik verschillende real time events gemaakt.
 
 `connection Event` wordt uitgevoerd wanneer de gebruiker verbinding maakt met de server
-new-user Event` wordt uigevoerd Wanneer de gebruiker een nieuwe gebruiker aanmaakt
 
 `chat message Event` waar de gebruikers met elkaar berichten kan sturen in een chat room
 
 `chat history` Maximaal 50 berichten worden opgeslagen, de nieuwe gebruikers die nog binnen komen kunnen alsnog de oude berichten zien.
 
-`Connect` De event ga checken of de applicatie verbinding heeft met de server. Als er geen verbinding is wordt een bericht getsuurd naar de gebruikers dat hij offline is.
+`Connect` De event ga checken of de applicatie verbinding heeft met de server. Als er geen verbinding is wordt een bericht gestuurd naar de gebruiker dat hij offline is. 
 
 `Error` geeft een offline functie door en ook een bericht wanneer de gebruiker zit uit te schelden. 
 
