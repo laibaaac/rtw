@@ -297,7 +297,13 @@ Verder kan je ook de vorige berichten zien na het refreshen.
 
 
 ### Scheldwoord 
-Wanneer een gebruiker uitscheld, dan wordt het woord niet weergeven in de chat en krijgt de gebruiker een waarschuwing
+Wanneer een gebruiker uitscheld, dan wordt het woord niet weergeven in de chat en krijgt de gebruiker een waarschuwing. 
+
+
+![Group 1](https://github.com/laibaaac/rtw/assets/94360732/f4a82d49-7217-40e6-8b59-0b353f44ad22)
+
+
+
 
 
 ### Offline
