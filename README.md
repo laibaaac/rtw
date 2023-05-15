@@ -51,6 +51,7 @@ Zie hier de proces achter het bouwen van de applicatie!
 - [Data model](#data-model)
 - [Data lifecycle model](#data-lifecycle-model)
 - [Real time events](#real-time-events)
+- [Peer review](#peer-review)
 - [Bronnen](#bronnen)
 
 
@@ -359,6 +360,74 @@ Voor het communicatie tussen de server en de clients. Heb ik verschillende real 
 `Error` geeft een offline functie door en ook een bericht wanneer de gebruiker zit uit te schelden. 
 
 `Disconnect` Event die aangeeft dat de client niet meer verbonden is met de server.
+
+
+## Peer review 
+Ik had gevraagd aan verschillende of zij feedback konden geven op mijn werk.
+Hiernaar moesten de studenten bekijken om mij een peer review te geven.
+
+Scan your buddy's repository
+Does the repo have an apt description?
+Is there a link to the live demo at the top?
+Are any files in the repo that shouldn't be there like an .env file or node_modules?
+Is there a section about the concept, install notes, data life cycle, external API, and real-time events?
+Try to understand the concept
+Read about the concept in the readme, do you understand what the app does?
+Open up the live link (if it's already alive) and play around with the app
+Review the app's functions in an issue, feel free to add cool new ideas in an issue
+Test the app in multiple tabs, does multi-user functionality work as expected?
+Understand the data life cycle
+Are all the app's components present in a visual diagram?
+Is it clear what data is stored for each component?
+Is it clear how components communicate with each other? (socket, polling, OAuth)
+Can you follow where real-time data is created?
+Check the real-time events
+Are all custom events described?
+Can you imagine how the client-server communication works now that you know which events are used?
+Review the API info
+Is it clear what data the external API offers?
+Are instructions present on how to get a key from the API and how to connect to it?
+
+De volgende studenten gaven mij feedback die ik meteen heb verwerkt. 
+
+Peer review #1
+Hilal: 
+De repo heeft geen description.
+Ja er is een live link, twee zelfs!
+Er is geen onnodige files want ze heeft een gitignore
+Nee er is helemaal geen readme, ook geen wiki.
+
+De app ziet er leuk uit. Het lijkt op een chat voor web girls. Multi user functie werkt. Ik merkte als je veel chats stuurt dat de css glitcht. Je gaat zo naar beneden soortvan. zie foto
+
+De api is voor scheldwoorden. Als je een curse word zegt krijg je een waarschuwing
+
+Peer review #2 
+Keisha:
+Ja de repo heeft een description, er is ook een live link!
+Nee de bestandenstructuur klopt allemaal
+Ja de readme heeft veel informatie
+De concept is matig beschreven
+Live link en app werkt!
+Data model en data lifecycle zijn goed uitgebreid beschreven!
+Ook al haar events zijn beschreven, misschien kon ze de code erbij zetten om het nog meer uit te leggen. 
+Haar api is geen api maar meer een npm tool, ze legt het best goed uit 
+
+Jevona:
+Yes the repo has an description 
+yes there is a live link 
+no everything looks alright in the file structure
+yes she has a really extensive readme
+yes i kinda understand her concept
+the live link does certainly work also multiple users can use the app, the app is easy to follow!
+The data lifecycle of hers looks different because she uses a npm tool instead of an api, but it is easy to follow
+All the component that she mentioned are also mentioned in the data life cycle 
+Yes kinda, i think she stores the chat history 
+Yes she uses sockets
+i think it is created in her client and server, but it doesn't really mention so in the readme 
+all the custom events are described, only if she could put her code there so i can understand furthermore 
+The api is described nice and tightly, really nice api!
+
+
 
 
 ## Bronnen
