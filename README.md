@@ -70,6 +70,10 @@ De score van de gebruikers worden bijgehouden en de gebruiker die 5 keer een ant
 
 **Schets**
 
+<img width="500" alt="Schermafbeelding 2023-05-15 om 09 30 22" src="https://github.com/laibaaac/rtw/assets/94360732/106e2368-0a8f-4ff3-8945-57403e9bebba">
+
+
+
 ### 2e concept
 Gifs app 
 In deze app kan je met gebruikers chatten en ook gifs sturen vanuit de giphy api. 
@@ -77,6 +81,9 @@ De giphy api bestaat uit een zoekbalk en de content die erin wordt geladen en ge
 Zo kan de gebruiker extra emoties in de app betrekken.
 
 **Schets**
+
+<img width="500" alt="Schermafbeelding 2023-05-15 om 09 26 21" src="https://github.com/laibaaac/rtw/assets/94360732/6839f1ad-0094-4938-9663-eceafbf2909f">
+
 
 
 
@@ -88,6 +95,13 @@ Ik ga de api / npm tool Alex.js gebruiken die let op verschillende soorten schel
 Verder als het mij lukt om een betrouwbare language detector  te vinden, ga ik die proberen te implementeren, zo kan er gecheckt worden wie wel en niet engels praat. 
 
 **Schets**
+
+
+<img width="500" alt="Schermafbeelding 2023-05-15 om 09 30 22" src="https://github.com/laibaaac/rtw/assets/94360732/ad462fca-64ce-4914-a7fe-a8acbe568402">
+
+
+
+
 
 
 ## Gekozen concept
