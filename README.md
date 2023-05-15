@@ -300,8 +300,8 @@ Verder kan je ook de vorige berichten zien na het refreshen.
 ### Scheldwoord 
 Wanneer een gebruiker uitscheld, dan wordt het woord niet weergeven in de chat en krijgt de gebruiker een waarschuwing. 
 
+<img width="500" alt="Schermafbeelding 2023-05-15 om 09 54 28" src="https://github.com/laibaaac/rtw/assets/94360732/2003cdb2-38ec-49e3-8933-78a31682162
 
-![Group 1](https://github.com/laibaaac/rtw/assets/94360732/f4a82d49-7217-40e6-8b59-0b353f44ad22)
 
 
 
