@@ -13,6 +13,7 @@ const chatScreen = document.querySelector('main section:nth-of-type(3)');
 const createUserbutton = document.querySelector('.create-user-btn');
 const goBackButton = document.querySelector('.back-btn');
 
+// ------------------- Username -------------------
 let clientname;
 
 // Verberg het chatscherm totdat de gebruiker een naam heeft ingevoerd
@@ -103,7 +104,7 @@ socket.on('message', message => {
     if (message.username === clientname) {
     li_element.dataset.mymessage="berichtje"
     }
-    
+
     li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
     messages.appendChild(li_element);
     messages.scrollTop = messages.scrollHeight;
@@ -149,7 +150,9 @@ socket.on('history', (history) => {
 // ------------------- Datum-------------------
 // hier geef ik een functie mee, waar ik de huidige datum  mee geef 
 function insertDate() {
+    // maak een nieuwe datum aan
    let currentDate = 'Today ' + date.toUTCString().slice(5, 16);
+   // voeg de datum toe aan het element
     time.textContent = currentDate;
 };
 
@@ -157,18 +160,22 @@ function insertDate() {
 
 socket.on('fail', errorMessage => {
 
+    // maak een error message element aan
     const errorElement = document.createElement('div');
+
+    // voeg de error message toe aan het element
     errorElement.textContent = errorMessage;
+
+    // voeg een class toe aan het element
     errorElement.classList.add('error-message');
     
     // positionering van de error message & kleur
     errorElement.style.position = 'fixed';
     errorElement.style.bottom = '8em';
     errorElement.style.right = '8em';
-
     errorElement.style.color = 'red';
     
-
+    // voeg de error message toe aan de body
     document.body.appendChild(errorElement);
     
     // na 2 sec de error weghalen
