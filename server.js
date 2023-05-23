@@ -74,7 +74,7 @@ io.on("connection", (socket) => {
         } else {
             console.log('success!: ' + message.message);
             socket.emit('success', { message: 'Thank you for your message.' });
-            socket.emit('message', message)
+            io.emit('message', message)
             // Kijkt naar de lengte van de history en verwijderd oude bericht als het groter is dan de limiet
             while (history.length > historySize) {
               history.shift()

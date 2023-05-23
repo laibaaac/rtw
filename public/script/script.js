@@ -152,7 +152,6 @@ function insertDate() {
 //     messages.scrollTop = messages.scrollHeight
 //   };
 
-
 socket.on('fail', errorMessage => {
     console.log('fail', errorMessage);
     error.textContent = errorMessage;
