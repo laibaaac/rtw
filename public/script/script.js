@@ -81,8 +81,7 @@ submit.addEventListener('click', event => {
         }
         // Emit een 'message' event om het bericht te verzenden naar de server
         socket.emit('message', chat)
-        input.value = ''
-        
+        input.value = '';
     }
 });
 
@@ -95,12 +94,12 @@ socket.on('message', message => {
     const li_element = document.createElement('li');
 
     li_element.textContent = ` ${message.username} : ${message.message} `;
-    li_element.id = message.message_id;
-    li_element.dataset.mymessage="berichtje"
+    // li_element.id = message.message_id;
+    // li_element.dataset.mymessage="berichtje"
 
-    li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
-    messages.appendChild(li_element);
-    messages.scrollTop = messages.scrollHeight;
+    // li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
+    // messages.appendChild(li_element);
+    // messages.scrollTop = messages.scrollHeight;
 });
 
 
@@ -133,7 +132,6 @@ socket.on('history', (history) => {
                 li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
                 messages.appendChild(li_element);
                 messages.scrollTop = messages.scrollHeight;    
-
             }
         }
     }
@@ -149,7 +147,14 @@ function insertDate() {
 
 // ------------------- New messages in de chat-------------------
 // Voeg een nieuwe boodschap toe aan de lijst van berichten
-function addMessage(message) {
-    messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
-    messages.scrollTop = messages.scrollHeight
-  };
+// function addMessage(message) {
+//     messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
+//     messages.scrollTop = messages.scrollHeight
+//   };
+
+
+socket.on('fail', errorMessage => {
+    console.log('fail', errorMessage);
+    error.textContent = errorMessage;
+    error.classList.add('show');
+  });

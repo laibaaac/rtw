@@ -69,7 +69,7 @@ io.on("connection", (socket) => {
         // Als het bericht niet aan de criteria voldoet, kan de gebruiker het bericht niet door sturen
         if (result.length > 0) {
             console.log('failed!');
-            socket.emit('error', 'Please watch your language.');
+            socket.emit('fail', 'Please watch your language.');
             // Als het bericht wel aan de criteria voldoet, kan de gebruiker het bericht doorsturen naar andere 
         } else {
             console.log('success!: ' + message.message);
