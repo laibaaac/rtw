@@ -300,3 +300,12 @@ main section:nth-child(3) ul li[data-mymessage="berichtje"]{
     font-weight: bold;
   }
   
+
+  .error-message {
+    position: fixed;
+    bottom: 8em;
+    right: 8em;
+    color: red;
+  }
+  
+  

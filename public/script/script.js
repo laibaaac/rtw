@@ -132,7 +132,7 @@ socket.on('history', (history) => {
                 li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
                 messages.appendChild(li_element);
                 messages.scrollTop = messages.scrollHeight;   
-                 
+
             }
         }
     }
@@ -153,8 +153,30 @@ function insertDate() {
 //     messages.scrollTop = messages.scrollHeight
 //   };
 
+// Handling 'fail' event to display error message
+// Handling 'fail' event to display error message
 socket.on('fail', errorMessage => {
-    console.log('fail', errorMessage);
-    error.textContent = errorMessage;
-    error.classList.add('show');
+    // Create an error message element
+    const errorElement = document.createElement('div');
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add('error-message');
+    
+    // Position the error message at the bottom right
+    errorElement.style.position = 'fixed';
+    errorElement.style.bottom = '8em';
+    errorElement.style.right = '8em';
+    
+    // Apply red color to the error message
+    errorElement.style.color = 'red';
+    
+    // Append the error message to the document body
+    document.body.appendChild(errorElement);
+    
+    // Remove the error message after 2 seconds
+    setTimeout(() => {
+      errorElement.remove();
+    }, 2000);
   });
+  
+  
+  
