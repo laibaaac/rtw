@@ -94,12 +94,12 @@ socket.on('message', message => {
     const li_element = document.createElement('li');
 
     li_element.textContent = ` ${message.username} : ${message.message} `;
-    // li_element.id = message.message_id;
-    // li_element.dataset.mymessage="berichtje"
+    li_element.id = message.message_id;
+    li_element.dataset.mymessage="berichtje"
 
-    // li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
-    // messages.appendChild(li_element);
-    // messages.scrollTop = messages.scrollHeight;
+    li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
+    messages.appendChild(li_element);
+    messages.scrollTop = messages.scrollHeight;
 });
 
 
