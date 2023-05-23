@@ -13,6 +13,8 @@ const chatScreen = document.querySelector('main section:nth-of-type(3)');
 const createUserbutton = document.querySelector('.create-user-btn');
 const goBackButton = document.querySelector('.back-btn');
 
+let clientname;
+
 // Verberg het chatscherm totdat de gebruiker een naam heeft ingevoerd
 chatScreen.classList.add('hidden');
 
@@ -70,6 +72,8 @@ socket.on('connect', () => {
 submit.addEventListener('click', event => {
     event.preventDefault();
 
+    clientname = usernameInput.value;
+
     const allListElements = messages.querySelectorAll('li');
     
     if (input.value) {
@@ -95,8 +99,11 @@ socket.on('message', message => {
 
     li_element.textContent = ` ${message.username} : ${message.message} `;
     li_element.id = message.message_id;
-    li_element.dataset.mymessage="berichtje"
 
+    if (message.username === clientname) {
+    li_element.dataset.mymessage="berichtje"
+    }
+    
     li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
     messages.appendChild(li_element);
     messages.scrollTop = messages.scrollHeight;
@@ -146,33 +153,25 @@ function insertDate() {
     time.textContent = currentDate;
 };
 
-// ------------------- New messages in de chat-------------------
-// Voeg een nieuwe boodschap toe aan de lijst van berichten
-// function addMessage(message) {
-//     messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
-//     messages.scrollTop = messages.scrollHeight
-//   };
+// ------------------- Error message-------------------
 
-// Handling 'fail' event to display error message
-// Handling 'fail' event to display error message
 socket.on('fail', errorMessage => {
-    // Create an error message element
+
     const errorElement = document.createElement('div');
     errorElement.textContent = errorMessage;
     errorElement.classList.add('error-message');
     
-    // Position the error message at the bottom right
+    // positionering van de error message & kleur
     errorElement.style.position = 'fixed';
     errorElement.style.bottom = '8em';
     errorElement.style.right = '8em';
-    
-    // Apply red color to the error message
+
     errorElement.style.color = 'red';
     
-    // Append the error message to the document body
+
     document.body.appendChild(errorElement);
     
-    // Remove the error message after 2 seconds
+    // na 2 sec de error weghalen
     setTimeout(() => {
       errorElement.remove();
     }, 2000);
