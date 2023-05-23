@@ -171,8 +171,8 @@ socket.on('fail', errorMessage => {
     
     // positionering van de error message & kleur
     errorElement.style.position = 'fixed';
-    errorElement.style.bottom = '8em';
-    errorElement.style.right = '8em';
+    errorElement.style.bottom = '4.7em';
+    errorElement.style.right = '20em';
     errorElement.style.color = 'red';
     
     // voeg de error message toe aan de body

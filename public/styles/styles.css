@@ -303,8 +303,8 @@ main section:nth-child(3) ul li[data-mymessage="berichtje"]{
 
   .error-message {
     position: fixed;
-    bottom: 8em;
-    right: 8em;
+    bottom: 4.7em;
+    right: 20em;
     color: red;
   }
   
