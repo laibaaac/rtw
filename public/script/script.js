@@ -131,7 +131,8 @@ socket.on('history', (history) => {
                 li_element.textContent = ` ${history[i].username} : ${history[i].message} `;
                 li_element.setAttribute('class', 'talk-bubble tri-right border round btm-left-in');
                 messages.appendChild(li_element);
-                messages.scrollTop = messages.scrollHeight;    
+                messages.scrollTop = messages.scrollHeight;   
+                 
             }
         }
     }
